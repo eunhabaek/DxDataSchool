@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //상속 예제
+        let Super = class{
+            method(){
+                console.log("상위 클래스의 매서드")
+            }
+        }
+        //Sub 생성
+        class Sub extends Super{
+            //overriding
+            method(){
+                super.method()
+                console.log("하위 클래스의 매서드")
+            }
+        }
+
+        let obj= new Sub()
+        
+        //Sub에는 method 없지만 Super로부터 상속받아서 method 사용 가능함
+        obj.method()
+        
+        // string 예제
+        let dogname="   jindodog  "
+
+        //모두 대문자 변경, 좌우 공백 제거
+        let upperdog=dogname.trim().toUpperCase()
+        console.log(upperdog)
+
+        //확장자 추출
+        let filename="filename.hwp"
+        let pos=filename.indexOf(".")
+        document.write(filename.substring(pos))
+
+        //CGGC 위치 출력
+        //중첩되는 경우 앞에 것만
+        let origin ="ABSDCGGCGGCGGCCCGCCGCCGGC"
+        pos=origin.indexOf("CGGC")
+        console.log(pos)
+
+        //Array 예제
+        numar=[1,45,36,26,78,4,134]
+
+        //데이터 개수 파악
+        console.log(numar.length)
+        
+        //forEach 순회하며 작업
+        numar.forEach((element, index, array)=>{
+            console.log(element)
+        })
+
+        //map 데이터 변환
+        let numarmap=numar.map((element,index,array)=>{
+            return element+1
+        })
+        console.log(numarmap)
+
+        //filter
+        let numarflt=numar.filter((element,index,array)=>{
+            return element%2==1
+        })
+        console.log(numarflt)
+
+        //
+        let ls1=[{name:"Eunha",gender:"F",age:27},
+                {name:"hain",gender:"F",age:40},
+                {name:"amin",gender:"M",age:50}]
+
+        let flst=ls1.filter((element,index,array)=>{
+        return element.gender=="F"
+        })
+        console.log(flst)      
+
+        //sort 실패
+        numar.sort()
+        console.log(numar)
+
+        //sort 성공
+        numar.sort((left,right)=>{
+            return left-right //right-left는 descending
+        })
+        console.log(numar)
+
+        //리스트 sort
+        lsag=ls1.sort((left,right)=>{
+            return left.age-right.age
+        })
+        console.log(lsag)
+
+        //이름순 sort
+        ls1.sort((left,right)=>{
+            if (left.name>right.name){return 1}
+            else if (left.name<right.name){return -1}
+            else{return 0}
+        })
+        console.log(ls1)
+
+        alert(navigator.userAgent)
+
+    </script>
+
+    <!--DOM-->
+    <div id="display"></div>
+    <input type="text" id="name"/>
+    <button id="btn">버튼</button>
+<script>
+    document.getElementById("btn").addEventListener("click",(e)=>{
+        document.getElementById("display").innerHTML=document.getElementById("name").value
+    })
+</script>
+</body>
+</html>

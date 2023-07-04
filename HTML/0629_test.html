@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--이미지 링크-->
+    <a href="https://www.naver.com"><img src="./img/siro.jpg" width="400" height="400" /></a>
+
+    <!--테이블 태그-->
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+
+        </tr>
+        <tr>
+            <td>흰둥이</td>
+            <td>2</td>
+        </tr>        
+        <tr>
+            <td>신짱구</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>김철수</td>
+            <td>5</td>
+        </tr>
+    </table>
+    
+    <!--폼 입력받기-->
+    <!--action은 처리할 서버의 URL-->
+    <form action="" medthod="post">
+        <br/>
+        <!--name은 서버에서 사용하기 위한 이름-->
+        <!--id는 클라이언트에서 사용하기 위한 이름, 자바스크립트에서 사용-->
+        <label>이름:<input type="text" name="name" id="name"/></label>
+        <br/>
+        <input type="radio" name="gender" checked="checked"/>남자
+        <input type="radio" name="gender"/>여자
+        <br/>
+        <button>확인</button>
+    </form>
+
+    <!--영역태그-->
+    <div>블록</div>
+    <span>스판</span>
+    <span>스판</span>
+    <iframe src="./0628_main.html" frameborder="0"></iframe>
+</body>
+</html>

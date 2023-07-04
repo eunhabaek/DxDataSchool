@@ -1,0 +1,27 @@
+/* 스타일 시트*/
+
+p{
+    color: aquamarine;
+}
+*{
+    background-image : url("../../HTML/img/zzanggu.jpg");
+}
+
+p:active{
+    color:black
+}
+input:focus{
+    background-color: cadetblue;
+
+}
+input:checked{
+    margin-left: 25px;
+}
+
+.redclass{
+    color: red;
+}
+
+#pinkcolor{
+    color: pink;
+}

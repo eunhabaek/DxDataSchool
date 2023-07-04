@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body bgcolor="black" text="pink">
+
+    <!--태그 속성-->
+    <h1 class="redarea">안녕하세요</h1>
+    <p class="redarea">반갑습니다</p>
+    <p id="eunha"></p>
+    <button id="btn">click</button>
+    <script>
+        document.getElementById("btn").addEventListener(
+            "click",function(e){
+                document.getElementById("eunha").innerHTML="짠!"
+
+            })
+    </script>
+
+    <style><!--수정이 쉬움-->
+        .redarea {
+            color: rebeccapurple;
+        }
+    </style>
+
+<!--a 태그-->
+<a href=""#down">아래로 이동</a>
+
+<p><a href="./0628.html" target="_blank">인덱스</a></p>
+<a href="https://www.naver.com" target="_parent">네이버</a>
+
+<p id="down">여기로</p>
+
+<!--목록태그-->
+<h3>커피</h3>
+<ol>
+    <li>아메리카노</li>
+    <li>카푸치노</li>
+</ol>
+
+
+<!--이미지-->
+<p><img src="https://item.kakaocdn.net/do/fd0050f12764b403e7863c2c03cd4d2d7154249a3890514a43687a85e6b6cc82" width="200" height="200"/></p>
+<p><img src="./HTML/img/manggu.webp" width="200" height="200"/></p>
+
+</body>
+</html>

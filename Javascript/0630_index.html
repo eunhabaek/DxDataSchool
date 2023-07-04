@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!--외부 .js 파일 불러오기-->
+    <script src="./js/basic.js"></Script>
+
+</head>
+<body>
+     <!--인라인 코드-->
+    <button onclick="alert('버튼 클릭')">버튼</button>
+    <br/>
+
+    <!--문서삽입-->
+    <button id="btn">버튼</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click",
+        function(){
+            alert("CLICK!!");alert("연속 호출")
+        })
+    </script>
+    
+    <!--출력 방법-->
+    <script>
+        document.write("화면")
+        alert("대화상자") <!--먼저 출력됨-->
+        console.log("콘솔")
+    </script>
+
+
+</body>
+</html>

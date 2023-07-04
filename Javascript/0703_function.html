@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        //함수작성
+        let f1=function(){
+            document.write("안녕"+"<br/>")
+        }
+        f1() //별도 메모리 공간 할당받아 f1 실행
+        
+        //매개변수 x
+        let noargfunc=function(){
+            for(let i=0;i<3;i++){
+                document.write(i+"<br/>")
+            }
+        }
+        noargfunc()
+
+        //매개변수 o
+        let argfunc=function(cnt){
+            for(let i=0;i<cnt;i++){
+                document.write(i+"<br/>")
+            }
+        }
+        argfunc(6)
+
+        //매개변수 예제
+        let intAddInt=function(a,b){
+            let summ=a+b
+            return summ
+           }
+        
+        document.write(intAddInt(2,3)+"<br/>")
+
+        //매개변수 뒤에서 생략 가능
+        //생략하면 undefined 대입
+
+        result=intAddInt(3) //리턴값 변수 할당하면 재사용 가능
+        document.write(result+"<br/>")
+
+        //객체로서의 함수
+        function zergattack(){
+            document.write("저그의 공격"+"<br/>")
+        }
+
+        function protossattack(){
+            document.write("프로토스의 공격"+"<br/>")
+        }
+        
+        //zergattack()
+        //protossattack()
+
+        let starcraft
+        starcraft=zergattack //변수에 함수 대입
+        starcraft()
+        starcraft=protossattack
+        starcraft() //다형성
+
+        //closure 예제 ->전역변수 안쓰도록
+
+        function outer(){
+            let data=0 //함수 안에서만 사용 가능한 변수
+
+            return function(){
+                data++
+                console.log(data)
+            }        
+        } 
+
+        let inner=outer() //outer에서 return 함수가 저장
+        inner() //1
+        inner() //2
+
+        //arrow 함수
+        const arrow = () => {
+            alert("arrow function")
+        }
+        arrow()
+
+        //내장함수
+
+        //confirm
+        let hungry=confirm("배고픈가요?")
+        if (hungry){
+            document.write("배고파요")
+        }else{
+            document.write("배고프지 않아요")
+        }
+        
+        //인코딩, 디코딩
+        let iu="name=아이유"
+        let encoding=encodeURI(iu)
+        
+        alert(encoding)//한글 깨짐
+        alert(decodeURI(encoding)) //다시 한글 정상 출력
+    </script>
+    
+</body>
+</html>

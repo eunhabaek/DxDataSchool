@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //if 예제 1 
+        //학점 매기기 예제
+        //변수의 범위 고려할 것
+        //else에서 예외처리
+        
+        let score =50
+        let msg1;
+        if (score>=80&&score<=100){
+            msg1="A";
+        }else if(score>=60&&score<80){
+            msg1="B"
+        }else if(score>=0&&score<60){ 
+            msg1="C"
+        }else{
+            console.log("잘못된 점수")
+        }
+        console.log(msg1)
+
+        //if 예제 2
+        //year가 윤년이면 "윤년", 아니면 "평년"
+        let year=2024;
+        let msg2;
+        if (year%4==0&&year%100!=0||year%400==0){
+            msg2=year+"년: 윤년"
+       }else if(year<0){
+            msg2=year+": 올바른 년도가 아닙니다."
+       }else{
+            msg2=year+"년: 평년"
+       }
+        console.log(msg2)
+    </script>
+    
+    
+    <script>
+        //switch 예제 1
+        //메뉴 선택하기
+        let menu=1
+        let msg3;
+        switch(menu){
+            case 0:
+                msg3='한식'
+                break;
+            case 1:
+                msg3='양식'
+                break;
+            case 2:
+                msg3='일식'
+                break;
+            default: '선택을 다시 해주세요'
+        }
+        console.log(msg3)
+
+        //switch 예제 2
+        //switch를 if처럼 사용하기 -> if가 더 간결, 권장하지는 않음
+        let score2=88
+        let msg4;
+        switch(true){
+            case score2>=80&&score<100:
+                msg4='A'
+                break;
+            case score2>=60:
+                msg4='B'
+                break;
+            case score2>=0:
+                msg4='C'
+                break;
+            default: '점수를 바르게 입력해주세요'
+        }
+        console.log(msg4)
+    </script>
+
+    <script>
+        //while 예제 1
+        //같은 문장 반복
+        let index=0
+        while(index<5){
+            console.log("hello javascript!!")
+            index++
+        }
+        
+        //while 예제 2
+        //4,3,2,1,0 순서대로 출력
+        let num=0
+        while(num<5){
+            console.log(4-num)
+            num++
+        }
+
+        //while 예제 3
+        //10 이하 홀수 순서대로 출력
+        odd=0
+        while(odd<5){
+            console.log(odd*2+1)
+            odd++
+        }
+
+    </script>
+    
+    <script>
+        //for 예제 1
+        for(let idx=0,i=0;idx<5&&i<6;idx++,i+=2){
+            console.log(idx+"+"+i)
+        }
+
+        //for 예제 2
+        animals=["cat","dog","rabbit"]
+        for (ams in animals){
+            console.log(ams)//인덱스 숫자
+            console.log(animals[ams]) // 배열 요소
+        }
+        
+    </script>
+    <script>
+        //break, continue
+        for(let i=1;i<5;i++){
+            if (i%2==0){
+                //break; 반복문 중단
+                //continue; 아래 수행하지 않고 다음 반복으로 넘어감
+            }
+            document.write(i)
+        }        
+    </script>
+
+</head>
+<body>
+     
+</body>
+</html>

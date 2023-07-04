@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--네이밍-->
+    <script>
+        let name='백은하'
+        let age=27
+        //변경 불가한건 대문자로
+        const HOME='광주'
+        name='baek'
+        console.log(typeof name)
+
+        //let new
+        //console.log(new)
+        
+        let notthing=null
+        console.log(typeof notthing)
+    </script>
+
+    <!--배열 실습-->
+    <script>
+        //배열생성
+        let animals=["cat","dog","pig","cow","mouse"]
+        //수정
+        animals[2]="puppy"
+        //출력
+        console.log(animals)
+        //길이 확인
+        console.log(animals.length)
+
+        let five="5"
+        console.log(five*five)
+    </script>
+
+    <!--연산 실습-->
+    <script>
+        let index=0
+        let tomato=["토","마","토"]
+        setInterval(function(){
+            document.write(tomato[index%tomato.length]+"<br />")
+            index++
+        },1000)
+    </script>
+
+    <!--머신 엡실론 문제-->
+    <script>
+        console.log(1.0-0.8)
+    </script>
+    
+    <!--산술비트 연산-->
+    <script>
+        console.log(~11)
+        console.log(~21)
+        console.log(11^21)
+        console.log(1<<2)
+        console.log(1!==2)
+    </script>
+
+</body>
+</html>

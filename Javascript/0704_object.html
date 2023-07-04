@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object 만들기 예제
+        let ar1=[{name:"eunha",age:27},
+                {name:"sera",age:25},
+                {name:"sam",age:40}]
+        for(let i in ar1){
+            document.write(ar1[i].name+" "+ar1[i].age+"<br/>")
+        }
+
+
+        //함수에서 포인터 사용하기
+        let obj={name:"eunha",
+                disp:function(){
+                    document.write(this.name);
+        }}
+        obj.disp()
+
+
+        //생성자 없을때 동일 2개 객체 생성
+        let ar2=[{name:"eunha",disp:function(){console.log(this.name)}},
+                 {name:"sera",disp:function(){console.log(this.name)}}]
+    
+        for(idx2 in ar2){
+            ar2[idx2].disp()
+        }
+
+        //생성자- 함수 안에서 this 사용했으므로?
+        let person=function(name){
+            this.name=name
+            this.disp=function(){console.log(this.name)}
+        }
+
+        //매서드 말고 속성만 설정해서 인스턴스 생성
+        //생성자로 인스턴스 만들때는 new와 함께 호출하면 heap에 인스턴스 생성
+        ar3=[new person("eunha2"),new person("sera2")]
+
+        for(idx3 in ar3){
+            ar3[idx3].disp()
+        }
+
+        //클래스 생성하고 인스턴스 생성
+        //클래스는 첫글자 대문자로
+        let Member=class{
+            constructor(name){
+                this.name=name
+            }
+            //클래스 안에 매서드 만들때는 let이나 function 생략 가능
+            disp(){
+                console.log(this.name)
+            }
+        }
+
+        ar4=[new Member("tom"), new Member("lena")]
+        for(idx4 in ar4){
+            ar4[idx4].disp()
+        }
+
+        //getter setter
+        let human = class{
+            constructor(name,score){
+                this.name=name
+                this.score=score
+            }
+            //print
+            disp(){console.log(this.name+":"+this.score)}
+
+            //getter
+            getName(){return this.name}
+
+            //setter
+            setName(name){this.name=name}
+
+            getScore(){return this.score}
+
+            //유효성 검사 setter
+            setScore(score){
+                if(score<0||score>100){
+                    alert("적절하지 않은 점수입니다.")
+                    return
+                }
+                this.score=score
+            }
+        }
+        //인스턴스 매서드는 인스턴스 속성으로 호출 가능
+        let obj2 =new human("eunha",10)
+        obj2.setScore(100)
+        obj2.disp()
+
+        //인스턴스 없이 매서드 호출하려면 static 매서드 필요
+
+    
+    </script>
+
+</body>
+</html>
