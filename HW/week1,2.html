@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //0703 별찍기
+        for(let i=0;i<5;i++){
+            if (i%4==0){
+                document.write("&nbsp".repeat(4-i)+"*".repeat(2*i+1)+"<br/>")
+            }else{
+                document.write("&nbsp".repeat(4-i)+"*"+"&nbsp".repeat(2*i-1)+"*"+"<br/>")
+            }
+        }
+
+        //0704 CGGC 찾기
+        //중첩되는 경우 앞에 것만 찾기
+        let origin ="ABSDCGGCGGCGGCCCGCCGCCGGC"
+        let target ="CGGC"
+        let idx =0
+        while(idx<origin.length-target.length+1){
+            if(origin.substring(idx,idx+4)==target){
+                    console.log(idx)
+                    idx+=3
+                }
+            idx++
+        }        
+    </script>
+
+
+</body>
+</html>
