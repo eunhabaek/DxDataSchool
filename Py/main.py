@@ -196,12 +196,50 @@ collect(*col_dict)
 collect(**col_dict)
 
 #가변 매개변수
-def merge(arg1,*arg2,arg3):
+def merge(arg1,*arg2,arg3,**arg4):
     print(arg1)
     for elem in arg2:
         print(elem,end="")
     print()
     print(arg3)
 
-merge(2,"1",20,"2",30,arg3=4)
+    for elem2 in arg4:
+        print(elem2,arg4[elem2])
+
+merge(2,"1",20,"2",30,arg3=4,a=1,b=3)
+
+
+#재귀함수
+def hap(n:int)-> int:
+    if n==1:
+        return 1
+    return n+hap(n-1)
+
+print(hap(10))
+
+#피보나치 수열 재귀로 =>메모리도 많이쓰고 오래걸림
+import functools
+@functools.lru_cache()
+
+def fibonacci(n:'int>=1'=0)->int:
+    fibonacci.__doc__ = "재귀 이용하여 피보나치 수열 값 리턴하는 함수"
+    if n==1 or n==2:
+        return 1
+    return fibonacci(n-2)+fibonacci(n-1)
+
+print(fibonacci(5))
+help(fibonacci)
+
+def dragonAttack():
+    print("드래곤의 공격")
+def tankAttack():
+    print("탱크의 공격")
+
+#다형성
+delegate=dragonAttack()
+delegate()
+delegate=tankAttack()
+delegate()
+
+#하노이의 탑 실습
 
