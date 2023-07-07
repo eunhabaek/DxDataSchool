@@ -241,5 +241,14 @@ delegate()
 delegate=tankAttack()
 delegate()
 
+#high order function
+def outer():
+    def inner():
+        print("내부 함수")
+    return inner
+
+f1=outer()
+f1()
+
 #하노이의 탑 실습
 
