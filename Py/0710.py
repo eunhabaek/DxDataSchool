@@ -255,3 +255,28 @@ print(stu1 is stu2) #id 같은 지 확인 : False
 
 print(stu1==stu3) #내부 데이터 같은 지 확인 : True
 print(stu1 is stu3) #id 같은 지 확인 True
+
+#getter, setter 예제
+#이름과 점수 갖는 객체 여러개 필요
+class NameScore:
+    def getName(self):
+        return self.name
+
+    def setName(self,name):
+        self.name=name
+
+    def getScore(self):
+        return self.score
+
+    def setScore(self,score):
+        self.score=score
+
+namescore=NameScore()
+
+#setter 이용한 속성 생성
+namescore.setName("eunha")
+namescore.setScore(10)
+
+#getter 이용한 속성 사용
+print(namescore.getName())
+print(namescore.getScore())
